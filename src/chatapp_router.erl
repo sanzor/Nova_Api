@@ -13,10 +13,10 @@ routes(_Environment) ->
                  {"/", { chatapp_main_controller, index}, #{methods => [get]}},
                  {"/assets/[...]", "assets"}
                 ]
-      },
-      #{prefix=>"users",
-      security=>false,
-      routes=>[
-        {"/get-all",{user_controller,index},#{methods=>[get]}}
-    ]
-    }].
+      }
+    %   #{prefix=>"/users",
+    %   security=>false,
+    %   routes=>[
+    %     {"/get_all",{user_controller,index},#{methods=>[get]}}
+    % ]
+    ].

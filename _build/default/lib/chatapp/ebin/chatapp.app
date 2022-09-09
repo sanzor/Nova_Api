@@ -4,7 +4,7 @@
               {registered,[]},
               {mod,{chatapp_app,[]}},
               {included_applications,[]},
-              {applications,[kernel,stdlib,nova,eredis]},
+              {applications,[kernel,stdlib,nova,ex_banking]},
               {env,[]},
               {modules,[chatapp_app,chatapp_main_controller,chatapp_main_dtl,
                         chatapp_router,chatapp_sup,user_controller]},

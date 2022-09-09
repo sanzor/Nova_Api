@@ -16,6 +16,7 @@
 
 start(_StartType, _StartArgs) ->
     ets:new(users, [named_table]),
+    ex_banking:start_link(x,x),
     % ex_banking:start_link(xx,xx),
     chatapp_sup:start_link().
 
