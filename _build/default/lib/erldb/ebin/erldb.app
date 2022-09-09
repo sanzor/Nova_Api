@@ -1,0 +1,11 @@
+{application,erldb,
+             [{description,"Erlang ORM"},
+              {vsn,"1.0.0"},
+              {registered,[erldb]},
+              {applications,[kernel,stdlib]},
+              {mod,{erldb_app,[]}},
+              {licenses,["Apache 2.0"]},
+              {env,[]},
+              {modules,[erldb,erldb_app,erldb_compiler,erldb_ets,erldb_init,
+                        erldb_lib,erldb_mnesia,erldb_mysql,erldb_sup,
+                        inflector]}]}.

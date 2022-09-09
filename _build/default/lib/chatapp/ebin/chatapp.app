@@ -1,0 +1,13 @@
+{application,chatapp,
+             [{description,"chatapp managed by Nova"},
+              {vsn,"0.1.0"},
+              {registered,[]},
+              {mod,{chatapp_app,[]}},
+              {included_applications,[]},
+              {applications,[kernel,stdlib,nova,eredis]},
+              {env,[]},
+              {modules,[chatapp_app,chatapp_main_controller,chatapp_main_dtl,
+                        chatapp_router,chatapp_sup,user_controller]},
+              {maintainers,[]},
+              {licenses,["Apache 2.0"]},
+              {links,[]}]}.
