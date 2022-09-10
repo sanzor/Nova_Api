@@ -16,7 +16,8 @@
 
 start(_StartType, _StartArgs) ->
     ets:new(users, [named_table]),
-    ex_banking:start_link(x,x),
+    start_redis(),
+    
     % ex_banking:start_link(xx,xx),
     chatapp_sup:start_link().
 
@@ -24,6 +25,9 @@ start(_StartType, _StartArgs) ->
 stop(_State) ->
     ok.
 
+start_redis()->
+    P=open_port({spawn,"redis-server"},[]),
+    io:format("Opened port:~p",[P]).
 %%====================================================================
 %% Internal functions
 %%====================================================================
