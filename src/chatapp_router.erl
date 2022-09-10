@@ -11,7 +11,7 @@ routes(_Environment) ->
       security => false,
       routes => [
                  {"/", { chatapp_main_controller, index}, #{methods => [get]}},
-                 {"/add-user",{user_controller,add},#{methods=>[post]}},
+                 {"/add_user",{user_controller,add},#{methods=>[post]}},
                  {"/assets/[...]", "assets"}
                 ]
       }
