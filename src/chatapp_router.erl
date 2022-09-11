@@ -10,8 +10,9 @@ routes(_Environment) ->
     [#{prefix => "",
       security => false,
       routes => [
-                 {"/", { chatapp_main_controller, index}, #{methods => [get]}},
-                 {"/add_user",{user_controller,add},#{methods=>[post]}},
+                 {"/", { chatapp_main_controller, index}, #{methods => [options,get]}},
+                 {"/add",{user_controller,add},#{methods=>[post]}},
+                 {"/get",{user_controller,get},#{methods=>[get]}},
                  {"/assets/[...]", "assets"}
                 ]
       }
