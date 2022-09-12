@@ -12,6 +12,8 @@ routes(_Environment) ->
       routes => [
                  {"/", { chatapp_main_controller, index}, #{methods => [options,get]}},
                  {"/add",{user_controller,add},#{methods=>[post]}},
+                 {"/update",{user_controller,add},#{methods=>[update]}},
+                 {"/delete",{user_controller,delete},#{methods=>[delete]}},
                  {"/get",{user_controller,get},#{methods=>[get]}},
                  {"/assets/[...]", "assets"}
                 ]
