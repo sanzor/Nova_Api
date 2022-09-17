@@ -15,6 +15,7 @@ routes(_Environment) ->
                  {"/update",{user_controller,add},#{methods=>[update]}},
                  {"/delete",{user_controller,delete},#{methods=>[delete]}},
                  {"/get",{user_controller,get},#{methods=>[get]}},
+                 {"/getall",{user_controller,getall},#{methods=>[get]}},
                  {"/assets/[...]", "assets"}
                 ]
       }
