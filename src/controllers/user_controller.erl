@@ -6,7 +6,13 @@
          delete/1,
          update/1]).
 
-
+split(List) when is_list(List) ->
+    case length(List) rem 2 of
+        0 -> split(List,[]);
+        1 -> throw(odd_list)
+end.
+split([],Accu)->Accu;
+split([First,Second|Rest],Accu)->split(Rest,[#{First => Second}|Accu]).
 
 get(#{ bindings := #{<<"user">> := UserId}})->
     try
@@ -23,7 +29,10 @@ getall(_Request)->
     try
         {ok,Port}=eredis:start_link(),
         {ok,Result}=eredis:q(Port,["hgetall","users"]),
-        {json,200,#{},#{<<"users">> => Result}}
+        io:format("List: ~p",[Result]),
+        TupleList=split(Result),
+        io:format("Formatted : ~p",[TupleList]),
+        {json,200,#{},#{<<"users">> => TupleList}}
     catch
         Error:Cause -> {json,500,#{},#{ <<"error">> => Error , <<"cause">> => Cause}}
     end.
